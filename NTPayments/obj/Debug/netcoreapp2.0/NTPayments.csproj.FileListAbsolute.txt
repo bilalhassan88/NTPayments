@@ -1,0 +1,11 @@
+C:\Users\bilal\source\repos\NTPayments\NTPayments\bin\Debug\netcoreapp2.0\NTPayments.deps.json
+C:\Users\bilal\source\repos\NTPayments\NTPayments\bin\Debug\netcoreapp2.0\NTPayments.runtimeconfig.json
+C:\Users\bilal\source\repos\NTPayments\NTPayments\bin\Debug\netcoreapp2.0\NTPayments.runtimeconfig.dev.json
+C:\Users\bilal\source\repos\NTPayments\NTPayments\bin\Debug\netcoreapp2.0\NTPayments.dll
+C:\Users\bilal\source\repos\NTPayments\NTPayments\bin\Debug\netcoreapp2.0\NTPayments.pdb
+C:\Users\bilal\source\repos\NTPayments\NTPayments\obj\Debug\netcoreapp2.0\NTPayments.csprojResolveAssemblyReference.cache
+C:\Users\bilal\source\repos\NTPayments\NTPayments\obj\Debug\netcoreapp2.0\NTPayments.csproj.CoreCompileInputs.cache
+C:\Users\bilal\source\repos\NTPayments\NTPayments\obj\Debug\netcoreapp2.0\NTPayments.AssemblyInfoInputs.cache
+C:\Users\bilal\source\repos\NTPayments\NTPayments\obj\Debug\netcoreapp2.0\NTPayments.AssemblyInfo.cs
+C:\Users\bilal\source\repos\NTPayments\NTPayments\obj\Debug\netcoreapp2.0\NTPayments.dll
+C:\Users\bilal\source\repos\NTPayments\NTPayments\obj\Debug\netcoreapp2.0\NTPayments.pdb

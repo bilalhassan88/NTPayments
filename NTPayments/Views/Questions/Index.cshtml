@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<div>
+    <button id="Refresh" type="button" style=" margin-top:5px;" class="btn btn-primary pull-right ">Refresh <span class="glyphicon glyphicon-refresh"></span></button>
+    <h2>StackOver Flow Questions</h2>
+</div>
+
+<div id="StackDiv">
+    <table id="tblStackFlow" class="table table-bordered">
+        <tr>
+            <th colspan="1">Sr#</th>
+            <th colspan="1">Title</th>
+            <th colspan="1">Creation Date</th>
+            <th colspan="1">Views </th>
+            <th colspan="1">Answer Count</th>
+            <th colspan="1">Owner</th>
+            <th colspan="1">Tags</th>
+        </tr>
+
+    </table>
+
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            StackOverflowQuestions();
+
+            function StackOverflowQuestions()
+            { 
+                $.ajax({
+                    url: "/api/SOQuestionsManagement"
+                }).done(function (data) {
+                    var inputObj = $('#tblStackFlow');
+                    var items = data.items;
+                    for (var i = 0; i < items.length; i++) {
+                        var str = $('#tblStackFlow > tbody:last-child').append("<tr><td>" + (i + 1) + "</td><td> <a href=" + items[i].link + " target='_blank'>" + items[i].title + "</a> </td><td>" + timeConverter((items[i].creation_date)) + "</td><td>" + items[i].view_count + "</td><td>" + items[i].answer_count + "</td><td> <a href=" + items[i].owner.link + " target='_blank'>" + items[i].owner.display_name  + "</a> </td><td>" + items[i].tags + "</td></tr>");
+                        inputObj.append(str);
+                    }
+                });
+            }
+
+
+
+            function timeConverter(UNIX_timestamp) {
+                var a = new Date(UNIX_timestamp * 1000);
+                var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                var year = a.getFullYear();
+                var month = months[a.getMonth()];
+                var date = a.getDate();
+                var hour = a.getHours();
+                var min = a.getMinutes();
+                var sec = a.getSeconds();
+                var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+                return time;
+            }
+
+
+
+            $('#Refresh').click(function () {
+                $("#tblStackFlow").find("tr:gt(0)").remove();
+                StackOverflowQuestions();
+            });
+
+
+        });
+    </script>
+}
+
